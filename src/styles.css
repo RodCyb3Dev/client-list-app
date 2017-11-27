@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: url('assets/img/bg2.jpg');
+}
+.container{
+  position: relative;
+  align-self: auto;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+navbar-brand{
+  font-size: 140px;
+}
+
+
+tr{
+  color: white;
+}
+.form-group {
+
+  color: white;
+}
+.card {
+  color: white;
+  background: transparent !important;
+
+}
+.list-group-item{
+  color: rgb(39, 39, 39);
+}
+
+
+.li>list-group-item{
+   background: transparent !important;
+
+}
+
+.alert p{
+  margin: 0;
+  padding: 0;
+}
