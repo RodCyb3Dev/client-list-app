@@ -13,14 +13,14 @@ import { SettingsService } from '../../services/settings.service';
 export class EditClientComponent implements OnInit {
   id: string;
   client: Client = {
-    firstName:'',
-    lastName:'',
-    email:'',
-    phone:'',
-    balance:0
-  }
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    balance: 0
+  };
 
-  disableBalanceOnEdit: boolean = true;
+  disableBalanceOnEdit = true;
 
   constructor(
     private clientService: ClientService,

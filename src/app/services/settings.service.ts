@@ -8,10 +8,10 @@ export class SettingsService {
     allowRegistration: true,
     disableBalanceOnAdd: true,
     disableBalanceOnEdit: false
-  }
+  };
 
   constructor() {
-    if(localStorage.getItem('settings') != null){
+    if (localStorage.getItem('settings') != null) {
       this.settings = JSON.parse(localStorage.getItem('settings'));
     }
   }

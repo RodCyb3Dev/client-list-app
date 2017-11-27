@@ -16,38 +16,39 @@ export class AddClientComponent implements OnInit {
     lastName: '',
     email: '',
     phone: '',
-    balance:0
-  }
+    balance: 0
+  };
 
+  disableBalanceOnAdd = false;
 
-  disableBalanceOnAdd: boolean = false;
-
-constructor(
-  private flashMessagesService: FlashMessagesService,
-  private router: Router,
-  private clientService: ClientService
-) {}
+  constructor(
+    private flashMessagesService: FlashMessagesService,
+    private router: Router,
+    private clientService: ClientService,
+    private settingsService: SettingsService
+  ) { }
 
   ngOnInit() {
+    this.disableBalanceOnAdd = this.settingsService.getSettings().disableBalanceOnAdd;
   }
 
   onSubmit({value, valid}: {value: Client, valid: boolean}){
-    if(this.disableBalanceOnAdd){
+    if (this.disableBalanceOnAdd){
       value.balance = 0;
     }
-    if(!valid){
+    if (!valid){
       this.flashMessagesService.show('Please fill in all fields', {
-        cssClass:'alert-danger', timeout: 4000
+        cssClass: 'alert-danger', timeout: 4000
       });
       this.router.navigate(['add-client']);
     } else {
       // Add New Client
       this.clientService.newClient(value);
       this.flashMessagesService.show('New client added', {
-        cssClass:'alert-success', timeout: 4000
+        cssClass: 'alert-success', timeout: 4000
       });
       this.router.navigate(['/']);
-     }
+    }
   }
 
 }

@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.authService.getAuth().subscribe(auth => {
-      if(auth){
+      if (auth){
         this.isLoggedIn = true;
         this.loggedInUser = auth.email;
       } else {
@@ -39,7 +39,7 @@ export class NavbarComponent implements OnInit {
   onLogoutClick(){
     this.authService.logout();
     this.flashMessagesService.show('You are logged out', {
-      cssClass:'alert-success', timeout: 4000
+      cssClass: 'alert-success', timeout: 4000
     });
     this.router.navigate(['/login']);
   }

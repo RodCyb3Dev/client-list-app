@@ -13,8 +13,8 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 export class ClientDetailsComponent implements OnInit {
   id: string;
   client: Client;
-  hasBalance: boolean = false;
-  hasBalanceUpdateInput: boolean = false;
+  hasBalance = false;
+  hasBalanceUpdateInput = false;
 
   constructor(
     private clientService: ClientService,
